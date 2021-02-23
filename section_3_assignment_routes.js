@@ -5,7 +5,7 @@ const requestHandler = (req, res) => {
     res.write("<body>");
     res.write("<h1>Create a user</h1>");
     res.write(
-      "<form action='/create-user' method='POST'><input type='text' name='username'/><button type='submit'>Create User</button></form>"
+      "<form action='/create-user' method='POST'><input type='text' name='username'><button type='submit'>Create User</button></form>"
     );
     res.write("</body>");
     return res.end();
@@ -32,9 +32,7 @@ const requestHandler = (req, res) => {
     });
   }
   res.write("<html><title>Sec3 Asgmt Page Not Found</title></html>");
-  res.write(
-    "<body><h1>Page Not Found</h1></body>"
-  );
+  res.write("<body><h1>Page Not Found</h1></body>");
   return res.end();
 };
 
