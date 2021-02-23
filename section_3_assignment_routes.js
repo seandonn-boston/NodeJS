@@ -1,6 +1,5 @@
 const requestHandler = (req, res) => {
-  const url = req.url;
-  const method = req.method;
+  const { url, method } = req;
   if (url === "/users") {
     res.write("<html><title>Sec3 Asgmt Users</title></html>");
     res.write(
