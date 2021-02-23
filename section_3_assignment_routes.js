@@ -1,5 +1,15 @@
 const requestHandler = (req, res) => {
   const { url, method } = req;
+  if (url === "/") {
+    res.write("<html><title>Sec3 Asgmt Home</title></html>");
+    res.write("<body>");
+    res.write("<h1>Create a user</h1>");
+    res.write(
+      "<form action='/create-user' method='POST'><input type='text' name='username'/><button type='submit'>Create User</button></form>"
+    );
+    res.write("</body>");
+    return res.end();
+  }
   if (url === "/users") {
     res.write("<html><title>Sec3 Asgmt Users</title></html>");
     res.write(
@@ -21,14 +31,10 @@ const requestHandler = (req, res) => {
       return res.end();
     });
   }
-  // url === '/'
-  res.write("<html><title>Sec3 Asgmt Home</title></html>");
-  res.write("<body>");
-  res.write("<h1>Create a user</h1>");
+  res.write("<html><title>Sec3 Asgmt Page Not Found</title></html>");
   res.write(
-    "<form action='/create-user' method='POST'><input type='text' name='username'/><button type='submit'>Create User</button></form>"
+    "<body><h1>Page Not Found</h1></body>"
   );
-  res.write("</body>");
   return res.end();
 };
 
