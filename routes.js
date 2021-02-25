@@ -1,3 +1,4 @@
+// 27 deprecated in favor of express.js
 // routes.js, callback function for createServer, listens to the incoming routes and handles accordingly
 // import the core module fs, granting us access to the local filesystem for read/write/etc
 const fs = require("fs");
