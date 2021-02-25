@@ -20,6 +20,11 @@ const app = express();
 //   next();
 // });
 
+// 38 an unexpected behavior is the console logging twice - this is actually expected though unexplained. It is due to the favicon request which comes in at '/favicon.ico' which is a separate request from any other (i.e. localhost:3000/) and it will reload with every page request. Just something to keep in mind
+app.use("/favicon.ico", (req, res, next) => {
+  console.log("favicon");
+});
+
 // 37 if we have middleware we want to run on everything, or several specific things, we call it above the other middlewares with an appropriate path if necessary and then we will call next() to continue the request:
 app.use("/", (req, res, next) => {
   console.log("This middleware always runs");
